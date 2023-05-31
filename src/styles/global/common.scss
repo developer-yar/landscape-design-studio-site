@@ -1,0 +1,100 @@
+@import "../mixins/adaptive-font.scss";
+@import "../mixins/bg-image.scss";
+@import "../mixins/push-footer.scss";
+
+html {
+  min-width: 280px;
+
+  background-color: var(--html-bg-color);
+
+  &.html_non-scrollabled {
+    body {
+      overflow: hidden;
+    }
+  }
+
+  body {
+    main {
+      a,
+      p,
+      li,
+      span,
+      figcaption,
+      blockquote {
+        @include adaptive-font(18, 16);
+        font-weight: 500;
+      }
+
+      a,
+      p,
+      li,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      figcaption,
+      label,
+      time,
+      ::placeholder,
+      ::before,
+      ::after {
+        color: var(--text-color);
+      }
+
+      button {
+        background-color: var(--main-color);
+        color: white;
+        padding-inline: 32px;
+        padding-block: 16px;
+
+        &:hover {
+          box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+
+    input,
+    textarea {
+      padding: 16px;
+      box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
+
+      background-color: var(--input-textarea-color);
+      color: var(--text-color);
+
+      &:focus {
+        box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.2);
+        background-color: var(--input-textarea-focus-color);
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      line-height: normal;
+      font-weight: 500;
+    }
+
+    input,
+    textarea,
+    button {
+      @include adaptive-font(16, 16);
+      border-radius: 2px;
+    }
+
+    .card {
+      background-color: var(--card-color) !important;
+      border-radius: 2px;
+      box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      text-rendering: auto;
+    }
+  }
+}

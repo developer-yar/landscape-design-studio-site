@@ -1,0 +1,90 @@
+@import "./mixins/adaptive-font.scss";
+@import "./mixins/animate-background.scss";
+@import "./mixins/breakpoints.scss";
+
+.banner {
+  @include animate-background(
+    linear-gradient(to right, #ff7300 0, #753a88 100%)
+  );
+
+  @include tablet() {
+    &:nth-of-type(1),
+    &:nth-of-type(4) {
+      .body {
+        flex-flow: row-reverse nowrap;
+      }
+
+      .image {
+        margin-inline-end: 64px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      .text {
+        margin-inline-end: 128px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .text {
+        margin-inline-end: 64px;
+      }
+    }
+
+    &:nth-of-type(1) {
+      .image {
+        width: 352px;
+      }
+    }
+
+    &:nth-of-type(2) {
+      .image {
+        width: 288px;
+      }
+    }
+
+    &:nth-of-type(3) {
+      .image {
+        width: 384px;
+      }
+    }
+
+    &:nth-of-type(4) {
+      .image {
+        width: 320px;
+      }
+    }
+  }
+}
+
+.body {
+  padding-block: 32px;
+  display: flex;
+  align-items: center;
+
+  @include phone() {
+    justify-content: center;
+    flex-flow: column nowrap;
+  }
+}
+
+.text {
+  @include adaptive-font(54, 38);
+  text-align: center;
+
+  @include phone() {
+    margin-block-end: 32px;
+  }
+}
+
+.image {
+  flex-shrink: 0;
+  border-radius: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+
+  @include phone() {
+    width: 100%;
+    max-width: 320px;
+  }
+}

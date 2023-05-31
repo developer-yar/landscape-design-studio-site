@@ -1,0 +1,48 @@
+@import "./mixins/adaptive-font.scss";
+@import "./mixins/animate-background.scss";
+@import "./mixins/breakpoints.scss";
+
+.statsBlock {
+  @include animate-background(linear-gradient(180deg, #f2a60d 0, #f53db5 100%));
+  padding-block: 32px;
+}
+
+.body {
+  display: grid;
+  gap: 32px;
+}
+
+.stats {
+  @extend .body;
+
+  @include phone() {
+    grid-template-columns: 1fr;
+  }
+
+  @include tablet() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop() {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat {
+  @extend .body;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 32px;
+  border-radius: 2px;
+}
+
+.number {
+  @include adaptive-font(36, 28);
+}
+
+.separator {
+  width: 33.33%;
+  height: 4px;
+  background-color: white;
+  display: block;
+}

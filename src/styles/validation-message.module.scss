@@ -1,0 +1,12 @@
+@import "./mixins/adaptive-font.scss";
+
+.validationMessage {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    margin-inline-end: 8px;
+    content: "!";
+    @include adaptive-font(32, 32);
+  }
+}

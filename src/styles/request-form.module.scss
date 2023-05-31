@@ -1,0 +1,65 @@
+@import "./mixins/adaptive-font.scss";
+@import "./mixins/breakpoints.scss";
+
+.requestForm {
+  display: grid;
+  grid-template: repeat(4, auto) / 1fr 4fr;
+  grid-template-areas:
+    "one four"
+    "two four"
+    "three four"
+    ". five";
+  gap: 32px;
+
+  button {
+    margin-inline-start: auto;
+  }
+
+  @include phone() {
+    grid-template: repeat(4, auto) / 1fr;
+    grid-template-areas:
+      "one"
+      "two"
+      "three"
+      "four"
+      "five";
+
+    textarea {
+      height: 232px;
+    }
+  }
+}
+
+.name,
+.phone,
+.email,
+.comment {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  input,
+  textarea {
+    flex-grow: 1;
+  }
+}
+
+.name {
+  grid-area: one;
+}
+
+.phone {
+  grid-area: two;
+}
+
+.email {
+  grid-area: three;
+}
+
+.comment {
+  grid-area: four;
+}
+
+.submit {
+  grid-area: five;
+}

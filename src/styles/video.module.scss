@@ -1,0 +1,18 @@
+@import "./mixins/animate-background.scss";
+
+.videoBlock {
+  @include animate-background(
+    linear-gradient(180deg, #5946ce 0%, #b84743 100%)
+  );
+  padding-block: 32px;
+}
+
+.video {
+  display: grid;
+  gap: 32px;
+}
+
+.file {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,48 @@
+@import "./mixins/breakpoints.scss";
+
+.projects {
+  display: grid;
+  gap: 32px;
+
+  @include phone() {
+    grid-template-columns: 1fr;
+  }
+
+  @include tablet() {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop() {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.button {
+  justify-self: center;
+  grid-column: 1/-1;
+}
+
+.choosedButton,
+.clearButton {
+  background-color: rgb(255, 64, 0);
+  @extend .button;
+}
+
+.project {
+  padding: 32px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+  align-items: center;
+}
+
+.services {
+  display: grid;
+  text-align: center;
+  gap: 16px;
+}
+
+.cost {
+  margin-block-start: auto;
+  text-align: center;
+}

@@ -1,0 +1,40 @@
+@import "./mixins/animate-background.scss";
+@import "./mixins/breakpoints.scss";
+
+.advantagesBlock {
+  padding-block: 32px;
+  @include animate-background(
+    linear-gradient(90deg, #3f5eff 0, #d634cb 50%, #fa881f 100%)
+  );
+}
+
+.body {
+  display: grid;
+  gap: 32px;
+}
+
+.advantages {
+  @extend .body;
+
+  @include phone() {
+    grid-template: auto / 1fr;
+  }
+
+  @include tablet() {
+    grid-template: auto / repeat(2, 1fr);
+  }
+
+  @include desktop() {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+.advantage {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+  text-align: center;
+  padding: 32px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.25);
+}

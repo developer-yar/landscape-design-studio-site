@@ -1,0 +1,5 @@
+@import "./mixins/adaptive-font.scss";
+
+.subtitle {
+  @include adaptive-font(28, 24);
+}

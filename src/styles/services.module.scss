@@ -1,0 +1,35 @@
+@import "./mixins/breakpoints.scss";
+
+.services {
+  display: grid;
+  gap: 32px;
+
+  @include phone {
+    grid-template-columns: 1fr;
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.service {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 32px;
+  padding: 32px;
+}
+
+.button {
+  align-self: center;
+  margin-block-start: auto;
+}
+
+.buttonContained {
+  @extend .button;
+  background-color: rgb(255, 64, 0);
+}

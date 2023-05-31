@@ -1,0 +1,12 @@
+.mainPage {
+  h1,
+  h2,
+  p,
+  a,
+  figcaption,
+  span,
+  &::before,
+  &::after {
+    color: white;
+  }
+}
