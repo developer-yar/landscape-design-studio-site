@@ -1,0 +1,17 @@
+@import "./mixins/adaptive-font.scss";
+
+.breadcrumb {
+  display: flex;
+
+  &:not(:last-child) {
+    &:after {
+      content: "/";
+      margin-inline: 4px;
+      @include adaptive-font(15, 13);
+    }
+  }
+}
+
+.link {
+  @include adaptive-font(16, 14);
+}

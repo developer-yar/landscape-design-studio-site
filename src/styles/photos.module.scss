@@ -1,0 +1,43 @@
+@import "./mixins/adaptive-font.scss";
+@import "./mixins/breakpoints.scss";
+@import "./mixins/scale.scss";
+
+.photos {
+  display: grid;
+  gap: 32px;
+
+  @include phone() {
+    grid-template: auto / 1fr;
+  }
+
+  @include tablet() {
+    grid-template: auto / repeat(2, 1fr);
+  }
+
+  @include desktop() {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+.linkPhoto {
+  overflow: hidden;
+  margin-block-end: 32px;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  @include scale(1.1, 0.25s);
+}
+
+.data {
+  display: grid;
+  gap: 8px;
+}
+
+.date {
+  @include adaptive-font(16, 14);
+  justify-self: flex-end;
+}

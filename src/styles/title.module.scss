@@ -1,0 +1,7 @@
+@import "./mixins/adaptive-font.scss";
+
+.title {
+  @include adaptive-font(36, 28);
+  line-height: normal;
+  font-weight: 500;
+}

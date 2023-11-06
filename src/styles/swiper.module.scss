@@ -1,0 +1,27 @@
+.slides,
+.thumbnails {
+  z-index: 0 !important;
+}
+
+.slides {
+  .slide {
+    .image {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+    }
+  }
+}
+
+.thumbnails {
+  .thumbnail {
+    .image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+    }
+  }
+}
+

@@ -1,0 +1,12 @@
+@import "./disable-animation.scss";
+
+@mixin scale($value, $time, $reverseTime: $time) {
+  transition: transform $reverseTime ease-in-out;
+
+  &:hover {
+    transform: scale($value);
+    transition: transform $time ease-in-out;
+  }
+
+  @include disable-animation();
+}

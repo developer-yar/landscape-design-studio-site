@@ -1,0 +1,29 @@
+@import "./mixins/breakpoints.scss";
+@import "./mixins/scale.scss";
+
+.works {
+  display: grid;
+  gap: 32px;
+
+  @include phone() {
+    grid-template: auto / 1fr;
+  }
+
+  @include tablet() {
+    grid-template: auto / repeat(2, 1fr);
+  }
+
+  @include desktop() {
+    grid-template: auto / repeat(3, 1fr);
+  }
+}
+
+.work {
+  display: flex;
+}
+
+.link {
+  padding: 32px;
+  margin: auto;
+  @include scale(1.05, 0.25s);
+}
